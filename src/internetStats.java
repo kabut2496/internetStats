@@ -31,6 +31,7 @@ public class internetStats extends javax.swing.JFrame {
         InPut = new javax.swing.JTextField();
         Output = new javax.swing.JLabel();
         Enter = new javax.swing.JButton();
+        OutPut2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -64,7 +65,11 @@ public class internetStats extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(Output, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Output, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(OutPut2, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -78,7 +83,9 @@ public class internetStats extends javax.swing.JFrame {
                     .addComponent(Enter))
                 .addGap(18, 18, 18)
                 .addComponent(Output)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(OutPut2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jMenu1.setText("File");
@@ -97,7 +104,7 @@ public class internetStats extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -128,15 +135,25 @@ public class internetStats extends javax.swing.JFrame {
        }
        if (num>=(Integer.parseInt(kid[0]))&&num<=(Integer.parseInt(kid[1]))){
            Output.setText("You Fit into the kid age grup for avreg internet usage");
+            OutPut2.setText("you spend "+num+ "minits every day on the Internet");
        }
        if (num>=(Integer.parseInt(tenager[0]))&&num<=(Integer.parseInt(tenager[1]))){
            Output.setText("You Fit into the teenager age grup for avreg internet usage");
+           num=num*60;
+            OutPut2.setText("you spend "+num+ "minits every day on the Internet");
+           
        }
         if (num>=(Integer.parseInt(parent[0]))&&num<=(Integer.parseInt(parent[1]))){
            Output.setText("You Fit into the parent age grup for avreg internet usage");
+           num=num*60;
+            OutPut2.setText("you spend "+num+ "minits every day on the Internet");
+           
        }
         if (num>(Integer.parseInt(tenager[1]))){
             Output.setText("you use the internet way to much and need to get a life");
+            num=num*60;
+            OutPut2.setText("you spend "+num+ " minits every day on the Internet");
+          
         }
       
     }//GEN-LAST:event_EnterActionPerformed
@@ -179,6 +196,7 @@ public class internetStats extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Enter;
     private javax.swing.JTextField InPut;
+    private javax.swing.JLabel OutPut2;
     private javax.swing.JLabel Output;
     private javax.swing.JLabel Question;
     private javax.swing.JMenu jMenu1;
